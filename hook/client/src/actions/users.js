@@ -110,7 +110,7 @@ export const updateUser = (id, name, phone) => dispatch => {
     return request.put(`users/${id}`, { name, phone }).then((response) => {
         dispatch(updateUserSuccess(id, response.data.data))
     }).catch((err) => {
-        dispatch(updateUserFailure())
+        dispatch(updateUserFailure(err))
     })
 }
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useState} from "react"
+import React, { useCallback, useState, useEffect, useRef } from "react"
 
 import { useDispatch } from 'react-redux'
 
@@ -50,10 +50,10 @@ export default function UserForm(props) {
                 handleSubmit}>
             <div className="row g-3 align-items-center">
 
-                <div className="col">
+                <div class="col">
                     <input
                         type="teks"
-                        placeholder="Enter your name"
+                        placeholder="insert name"
                         id="name"
                         name="name"
                         className="form-control"
@@ -62,10 +62,10 @@ export default function UserForm(props) {
                     />
                 </div>
 
-                <div className="col">
+                <div class="col">
                     <input
                         type="teks"
-                        placeholder="Enter your number"
+                        placeholder="insert number"
                         id="phone"
                         name="phone"
                         className="form-control"
@@ -76,7 +76,7 @@ export default function UserForm(props) {
 
                 <div className="col-auto">
                     <button type="submit" className="btn btn-success" 
-                    style={{backgroundColor: '#1159a6', borderWidth: 0}}>
+                    style={{backgroundColor: '#173e07', borderWidth: 0}}>
                         {props.submitLabel !== "search" &&
                             <i className="fa-regular fa-circle-check"></i>
                         }
@@ -91,7 +91,7 @@ export default function UserForm(props) {
                         <button type="submit"
                             onClick={props.cancel}
                             className="btn btn-warning"
-                            style={{ backgroundColor: '#f2af05', borderWidth: 0, color: 'white' }}>
+                            style={{ backgroundColor: '#4a8122', borderWidth: 0, color: 'white' }}>
                             <i className="fa-solid fa-ban"></i>
                             &nbsp;
                             cancel</button>
@@ -100,7 +100,7 @@ export default function UserForm(props) {
                         <button type="submit"
                             onClick={cancelSearch}
                             className="btn btn-warning"
-                            style={{ backgroundColor: '#f2af05', borderWidth: 0, color: 'white' }}>
+                            style={{ backgroundColor: '#4a8122', borderWidth: 0, color: 'white' }}>
                             <i className="fa-solid fa-ban"></i>
                             &nbsp;
                             reset</button>

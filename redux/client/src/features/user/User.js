@@ -30,7 +30,7 @@ export default function User(props) {
             <div className="card">
                 <div className=" shadow mb-4">
                     <div className="card-header pt-4 pb-3" style={{ backgroundColor: '#e9f3e0' }}>
-                        <h2 style={{ color: '#2bb5ff', fontWeight:300 , fontSize: 35 }}>PhoneBook</h2>
+                        <h2 style={{ color: '#000000', fontWeight:300 , fontSize: 35 }}>PhoneBook</h2>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ export default function User(props) {
 
                     <div className="card shadow mb-5">
                         <div className="card-header py-3" style={{ backgroundColor: '#e9f3e0' }}>
-                            <h6 className="m-0 font-weight-bold" style={{ color: '#2bb5ff' }}>Search Form</h6>
+                            <h6 className="m-0 font-weight-bold" style={{ color: '#000000' }}>Search Form</h6>
                         </div>
                         <div className="card-body">
                             <UserForm

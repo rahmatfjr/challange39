@@ -1,6 +1,4 @@
 import React, { Fragment, useCallback, useState } from "react"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons'
 import { Button, Modal } from 'react-bootstrap'
 
 export default function UserItem(props) {
@@ -32,16 +30,17 @@ export default function UserItem(props) {
             phone: user.phone,
             isEdit: true
         });
-    }, [user.name, user.phone])
+    }, [ user.name, user.phone])
 
     const handleCancel = useCallback((event) => {
         event.preventDefault()
         setUser({
+            ...user,
             name: props.data.name,
             phone: props.data.phone,
             isEdit: false
         });
-    }, [props.data.name, props.data.phone])
+    }, [user, props.data.name, props.data.phone])
 
     const saveEdit = useCallback((event) => {
         event.preventDefault()
@@ -52,19 +51,21 @@ export default function UserItem(props) {
             phone: user.phone,
             isEdit: false
         });
-    }, [user,props])
+    }, [user, props])
 
     const handleModalShowHide = useCallback(() => {
         setUser({
+            ...user,
             showHide: true
         })
-    }, [])
+    }, [user])
 
     const cancelHandleModalShowHide = useCallback(() => {
         setUser({
+            ...user,
             showHide: false
         })
-    }, [])
+    }, [user])
 
     return (
         <Fragment>
