@@ -4,6 +4,7 @@ import UserItem from "../components/UserItem";
 import { useSelector, useDispatch } from 'react-redux'
 
 
+
 export default function UserList() {
 
     const users = useSelector((state) => state.users.data)
@@ -23,29 +24,25 @@ export default function UserList() {
 
     return (
         <div onScroll={scrolling} style={{ overflowY: "scroll", height: 200 }}>
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th> # </th>
-                        <th> Name </th>
-                        <th> Phones </th>
-                        <th> Actions </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.map((user, index) => (
-                        <UserItem
-                            key={user.id}
-                            no={index + 1}
-                            data={user}
-                            sent={user.sent}
-                            remove={() => dispatch(removeUser(user.id))}
-                            resend={() => dispatch(resendUser(user))}
-                            update={(name, phone) => dispatch(updateUser(user.id, name, phone))}
-                        />
-                    ))}
-                </tbody>
-            </table>
+            <ul id="contacts">
+                <span class="preview">
+                    <table className="table table-striped">
+                        <tbody>
+                            {users.map((user, index) => (
+                                <UserItem
+                                    key={user.id}
+                                    no={index + 1}
+                                    data={user}
+                                    sent={user.sent}
+                                    remove={() => dispatch(removeUser(user.id))}
+                                    resend={() => dispatch(resendUser(user))}
+                                    update={(name, phone) => dispatch(updateUser(user.id, name, phone))}
+                                />
+                            ))}
+                        </tbody>
+                    </table>
+                </span>
+            </ul>
         </div>
     )
 }
