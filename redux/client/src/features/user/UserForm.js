@@ -63,7 +63,6 @@ export default function UserForm(props) {
                 </div>
 
 
-
                 <div class="col">
                     <input
                         type="teks"
