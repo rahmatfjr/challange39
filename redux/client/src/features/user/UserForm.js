@@ -64,6 +64,7 @@ export default function UserForm(props) {
 
                 <div class="col">
                     
+                    
                     <input
                         type="teks"
                         placeholder="insert number"
